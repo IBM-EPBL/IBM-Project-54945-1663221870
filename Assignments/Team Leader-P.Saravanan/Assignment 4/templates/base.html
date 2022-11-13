@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> FlaskApp</title>
+    <style>
+        .message {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+        }
+        nav a {
+            color: #ff0000;
+            font-size: 25px;
+            margin-right: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .alert {
+            padding: 20px;
+            margin: 5px;
+            color: #970020;
+            background-color: #ffd5de;
+        }
+        .button {
+    background-color:#970020; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #970020;
+}
+
+.button1:hover {
+  background-color: #970020;
+  color: white;
+}
+input[type=text],textarea {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+.header{
+            top:0;	
+			margin:0px;
+			left: 0px;
+			right: 0px;
+			position: fixed;
+			background: #ee7f01;
+			color: white;
+			box-shadow: 0px 8px 4px rgb(7, 7, 7);
+			overflow: hidden;
+			padding: 15px;
+			font-size: 1.5vw;
+			width: 100%;
+			text-align:right;
+           
+		}
+
+
+    </style>
+</head>
+<body style="background-color:#ebe703;">
+    <nav class="header" >
+        <a href="{{ url_for('index') }}">FlaskApp</a>
+        <a href="{{ url_for('create') }}">Create</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+        {% block content %} {% endblock %}
+    </div>
+
+</body>
+</html>

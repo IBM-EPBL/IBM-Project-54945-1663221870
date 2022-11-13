@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>{% block title %} Add a New Message {% endblock %}</h1>
+    <form method="post" style="text-align: center;">
+        <label for="title">TITLE</label>
+        <br>
+        <input type="text" style="padding:10px; border-color:red;" name="title"
+               placeholder="Message title"
+               value="{{ request.form['title'] }}"></input>
+        <br>
+       <label for="content">MESSAGE CONTENT</label>
+        <br>
+        <input type="text" style="padding:40px; border-color:red;" name="content" placeholder="Message content">{{ request.form['content'] }}</textarea>
+        <br>
+        <button type="submit" style=" background-color: green; color: black; padding: 10PX; border:2px solid BLACK;">Submit</button>
+        </form>
+{% endblock %}
