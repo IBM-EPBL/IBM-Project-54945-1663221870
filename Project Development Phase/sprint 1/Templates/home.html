@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+<!--title tag-->
+{% block title %}
+<title>Plasma-Home</title>
+<style>
+    .h1{
+        text-align: center;
+    }
+    .back{
+        background-color: aqua;
+    }
+    .btn{
+       margin-top: 200px;
+       margin-left: 350px;
+      
+    }
+    .btnl {
+       background-color: #14f014;
+       border: 2px solid rgb(13, 58, 4);
+       color: rgb(255, 0, 0);
+       padding: 10px 24px; 
+       cursor: pointer;
+       float: left;
+    }
+    .btnr {
+       margin-left: 300px;
+       background-color: #14f014;
+       border: 2px solid rgb(13, 58, 4);
+       color: rgb(255, 0, 0);
+       padding: 10px 24px; 
+       cursor: pointer;
+       float: left;
+    }
+    a{
+        color: red;
+    }
+</style>
+{% endblock %}
+       
+{% block content %}
+
+<h1 class="h1"> Home Page </h1>
+<div class="btn">
+<button class="btnl"> <a href="{{ url_for('register_page') }}" class="nav-link">Register</a></button>
+<button class="btnr"><a href="{{ url_for('login_page') }}" class="nav-link">Login</a></button>
+</div>
+    
+{% endblock %}
