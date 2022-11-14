@@ -1,0 +1,66 @@
+body{
+    background:#ddd;
+    }
+
+    .heading{
+        padding-top: 30px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .profile-area{
+    padding:40px 0;
+    }
+
+    .card{
+       box-shadow: 0 0 30px rgba(0,0,0,0.1);
+         overflow:hidden;
+       border-radius:15px;
+         margin-top:30px;
+    }
+
+    .img1 img{
+        height:100px;
+        border-top-right-radius:15px;
+        border-top-left-radius:15px;
+        width:100%;
+    }
+    
+    .img2 img{
+        position:relative;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        z-index:1;
+        width:140px;
+        height:140px;
+        border-radius:50%;
+        border: 7px solid #fff;
+        margin-top:-80px;
+    }
+
+    .card:hover .img2 img{
+        border-color:#0804f9;
+        transition:.7s
+    }
+
+    .main-text{
+        padding: 30px 0;
+        text-align:center;
+        }
+
+    .main-text h2{
+        top:22px;
+        text-transform:uppercase;
+        font-weight: 900;
+        font-size:20px;
+        margin: 0 0 10px;
+    }
+    .main-text p{
+        font-size:16px;
+        padding: 0 35px;
+    }
+
+    .space{
+    margin-bottom:20px;
+    }
