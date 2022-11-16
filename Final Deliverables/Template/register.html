@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Plasma Donor App</title>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+	<link rel="stylesheet" href="../static/style.css">
+
+<style>
+.login{
+top: 20%;
+}
+.back{
+	background-image: url(../images/Y5.jpeg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+	
+}
+</style>
+</head>
+
+<body class="back">
+<div class="header">
+<div>Plasma Donor App</div>
+	<ul>
+		<li><a class="active" href="/login">Home</a></li>
+		<li class="nav-item"><a href="{{ url_for('about_page') }}" class="nav-link">About</a></li>
+	</ul>
+</div>
+<div class="backr">
+ <div class="register">
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('register')}}"method="post">
+    	<input type="text" name="name" placeholder="Enter Your Name" required="required" style="color:black"/>
+        <input type="email" name="email" placeholder="Enter Email" required="required" style="color:black"/>
+		<input type="text" name="phone" placeholder="Enter 10-digit mobile number" required="required" style="color:black"/>
+        <input type="city" name="city" placeholder="Enter Your City Name" required="required" style="color:black"/>
+		<select name="infect">
+			
+					  <option value="select" selected>Select COVID infection status</option>
+					  <option value="infected">Infected</option>
+					  <option value="uninfected">Uninfected</option>
+		</select>
+        <select name="blood">
+					  <option value="select" selected>Choose your blood group</option>
+					  <option value="O Positive">O Positive</option>
+					  <option value="A Positive">A Positive</option>
+					  <option value="B Positive">B Positive</option>
+					  <option value="AB Positive">AB Positive</option>
+					  <option value="O Negative">O Negative</option>
+					  <option value="A Negative">A Negative</option>
+					  <option value="B Negative">B Negative</option>
+					  <option value="AB Negative">AB Negative</option>
+		</select>
+        <input type="password" name="passw" placeholder="Enter Password" required="required" style="color:black"/>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Register</button>
+    
+    </form>
+
+ <br><br>
+<div style="color:black">
+</div>
+ </div>
+</div> 
+<script>
+	window.watsonAssistantChatOptions = {
+	  integrationID: "a4a54435-5705-419d-b5d9-767874139af7", // The ID of this integration.
+	  region: "au-syd", // The region your integration is hosted in.
+	  serviceInstanceID: "f97e4971-479e-4408-82bf-8ed101d52299", // The ID of your service instance.
+	  onLoad: function(instance) { instance.render(); }
+	};
+	setTimeout(function(){
+	  const t=document.createElement('script');
+	  t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+	  document.head.appendChild(t);
+	});
+  </script><!--end chatbot-->
+
+</body>
+</html>
+
